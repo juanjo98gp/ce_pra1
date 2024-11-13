@@ -45,6 +45,7 @@
                 </div>
 
                 <!-- 'Women' tab panel, show/hide based on tab state. -->
+                <!-- 
                 <div id="tabs-1-panel-1" class="space-y-12 px-4 py-6" aria-labelledby="tabs-1-tab-1" role="tabpanel" tabindex="0">
                     <div class="grid grid-cols-2 gap-x-4 gap-y-10">
                         <div class="group relative">
@@ -89,7 +90,9 @@
                         </div>
                     </div>
                 </div>
+                -->
                 <!-- 'Men' tab panel, show/hide based on tab state. -->
+                <!-- 
                 <div id="tabs-1-panel-2" class="space-y-12 px-4 py-6" aria-labelledby="tabs-1-tab-2" role="tabpanel" tabindex="0">
                     <div class="grid grid-cols-2 gap-x-4 gap-y-10">
                         <div class="group relative">
@@ -134,6 +137,7 @@
                         </div>
                     </div>
                 </div>
+                -->
             </div>
 
             <div class="space-y-6 border-t border-gray-200 px-4 py-6">
@@ -160,6 +164,7 @@
                         <div class="flow-root">
                             <a href="{{ route('login') }}" class="-m-2 block p-2 font-medium text-gray-900">Sign in</a>
                         </div>
+                    @endauth
                 </div>
             @endif
 
@@ -262,17 +267,18 @@
                                             </div>
 
                                             <!--
-                          'Women' flyout menu, show/hide based on flyout menu state.
+                                            'Women' flyout menu, show/hide based on flyout menu state.
 
-                          Entering: "transition ease-out duration-200"
-                            From: "opacity-0"
-                            To: "opacity-100"
-                          Leaving: "transition ease-in duration-150"
-                            From: "opacity-100"
-                            To: "opacity-0"
-                        -->
+                                            Entering: "transition ease-out duration-200"
+                                                From: "opacity-0"
+                                                To: "opacity-100"
+                                            Leaving: "transition ease-in duration-150"
+                                                From: "opacity-100"
+                                                To: "opacity-0"
+                                            -->
+                                            <!-- 
                                             <div class="absolute inset-x-0 top-full text-sm text-gray-500">
-                                                <!-- Presentational element used to render the bottom shadow, if we put the shadow on the actual panel it pokes out the top, so we use this shorter element to hide the top of the shadow -->
+                                                <-- Presentational element used to render the bottom shadow, if we put the shadow on the actual panel it pokes out the top, so we use this shorter element to hide the top of the shadow --
                                                 <div class="absolute inset-0 top-1/2 bg-white shadow" aria-hidden="true"></div>
 
                                                 <div class="relative bg-white">
@@ -322,7 +328,8 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                            -->
+                                        </div>1
                                         <div class="flex">
                                             <div class="relative flex">
                                                 <button type="button" class="relative z-10 flex items-center justify-center text-sm font-medium text-white transition-colors duration-200 ease-out" aria-expanded="false">
@@ -333,17 +340,18 @@
                                             </div>
 
                                             <!--
-                          'Women' flyout menu, show/hide based on flyout menu state.
+                                            'Women' flyout menu, show/hide based on flyout menu state.
 
-                          Entering: "transition ease-out duration-200"
-                            From: "opacity-0"
-                            To: "opacity-100"
-                          Leaving: "transition ease-in duration-150"
-                            From: "opacity-100"
-                            To: "opacity-0"
-                        -->
+                                            Entering: "transition ease-out duration-200"
+                                                From: "opacity-0"
+                                                To: "opacity-100"
+                                            Leaving: "transition ease-in duration-150"
+                                                From: "opacity-100"
+                                                To: "opacity-0"
+                                            -->
+                                            <!-- 
                                             <div class="absolute inset-x-0 top-full text-sm text-gray-500">
-                                                <!-- Presentational element used to render the bottom shadow, if we put the shadow on the actual panel it pokes out the top, so we use this shorter element to hide the top of the shadow -->
+                                                !-- Presentational element used to render the bottom shadow, if we put the shadow on the actual panel it pokes out the top, so we use this shorter element to hide the top of the shadow --
                                                 <div class="absolute inset-0 top-1/2 bg-white shadow" aria-hidden="true"></div>
 
                                                 <div class="relative bg-white">
@@ -393,6 +401,7 @@
                                                     </div>
                                                 </div>
                                             </div>
+                                                -->
                                         </div>
 
                                         <a href="#" class="flex items-center text-sm font-medium text-white">Company</a>
