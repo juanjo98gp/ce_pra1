@@ -2,8 +2,8 @@
     <main>
         <div class="bg-white">
             <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-                <h1 class="text-3xl font-bold tracking-tight text-gray-900">Workspace sale</h1>
-                <p class="mt-4 max-w-xl text-sm text-gray-700">Our thoughtfully designed workspace objects are crafted in limited runs. Improve your productivity and organization with these sale items before we run out.</p>
+                <h1 class="text-3xl font-bold tracking-tight text-gray-900">{{ $category->first()->name }}</h1>
+                <p class="mt-4 max-w-xl text-sm text-gray-700">{{ $category->first()->description }}</p>
             </div>
         </div>
 
@@ -236,35 +236,15 @@
             <h2 id="products-heading" class="sr-only">Products</h2>
 
             <div class="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
-                <a href="#" class="group">
-                    <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
-                        <img src="https://tailwindui.com/plus/img/ecommerce-images/category-page-04-image-card-01.jpg" alt="Tall slender porcelain bottle with natural clay textured body and cork stopper." class="size-full object-cover object-center group-hover:opacity-75">
-                    </div>
-                    <h3 class="mt-4 text-sm text-gray-700">Earthen Bottle</h3>
-                    <p class="mt-1 text-lg font-medium text-gray-900">$48</p>
-                </a>
-                <a href="#" class="group">
-                    <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
-                        <img src="https://tailwindui.com/plus/img/ecommerce-images/category-page-04-image-card-02.jpg" alt="Olive drab green insulated bottle with flared screw lid and flat top." class="size-full object-cover object-center group-hover:opacity-75">
-                    </div>
-                    <h3 class="mt-4 text-sm text-gray-700">Nomad Tumbler</h3>
-                    <p class="mt-1 text-lg font-medium text-gray-900">$35</p>
-                </a>
-                <a href="#" class="group">
-                    <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
-                        <img src="https://tailwindui.com/plus/img/ecommerce-images/category-page-04-image-card-03.jpg" alt="Person using a pen to cross a task off a productivity paper card." class="size-full object-cover object-center group-hover:opacity-75">
-                    </div>
-                    <h3 class="mt-4 text-sm text-gray-700">Focus Paper Refill</h3>
-                    <p class="mt-1 text-lg font-medium text-gray-900">$89</p>
-                </a>
-                <a href="#" class="group">
-                    <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
-                        <img src="https://tailwindui.com/plus/img/ecommerce-images/category-page-04-image-card-04.jpg" alt="Hand holding black machined steel mechanical pencil with brass tip and top." class="size-full object-cover object-center group-hover:opacity-75">
-                    </div>
-                    <h3 class="mt-4 text-sm text-gray-700">Machined Mechanical Pencil</h3>
-                    <p class="mt-1 text-lg font-medium text-gray-900">$35</p>
-                </a>
-
+                @foreach ($products as $product)
+                    <a href="#" class="group">
+                        <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
+                            <img src="{{ asset($product->thumbnail_image) }}" alt="{{ $product->name }}" class="size-full object-cover object-center group-hover:opacity-75">
+                        </div>
+                        <h3 class="mt-4 text-sm text-gray-700">{{ $product->name }}</h3>
+                        <p class="mt-1 text-lg font-medium text-gray-900">{{ $product->price }}€</p>
+                    </a>
+                @endforeach
                 <!-- More products... -->
             </div>
         </section>

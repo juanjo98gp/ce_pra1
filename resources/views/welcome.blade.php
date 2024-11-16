@@ -29,7 +29,7 @@
                     <div class="relative box-content h-80 overflow-x-auto py-2 xl:overflow-visible">
                         <div class="absolute flex space-x-8 px-4 sm:px-6 lg:px-8 xl:relative xl:grid xl:grid-cols-5 xl:gap-x-8 xl:space-x-0 xl:px-0">
                             @foreach ($categories as $category)
-                                <a href="#" class="relative flex h-80 w-56 flex-col overflow-hidden rounded-lg p-6 hover:opacity-75 xl:w-auto">
+                                <a href="{{ url('/category/' . $category->id) }}" class="relative flex h-80 w-56 flex-col overflow-hidden rounded-lg p-6 hover:opacity-75 xl:w-auto">
                                     <span aria-hidden="true" class="absolute inset-0">
                                         <img src="{{ asset($category->image_path) }}" alt="{{ $category->name }}" class="h-full w-full object-cover object-center">
                                     </span>
