@@ -62,42 +62,14 @@
                     </div>
 
                     <div class="mt-6">
-                        <!-- 
-                        !-- Colors --
-                        <div>
-                            <h3 class="text-sm text-gray-600">Color</h3>
-
-                            <fieldset aria-label="Choose a color" class="mt-2">
-                                <div class="flex items-center space-x-3">
-                                    !-- Active and Checked: "ring ring-offset-1" --
-                                    <label aria-label="Washed Black" class="relative -m-0.5 flex cursor-pointer items-center justify-center rounded-full p-0.5 ring-gray-700 focus:outline-none">
-                                        <input type="radio" name="color-choice" value="Washed Black" class="sr-only">
-                                        <span aria-hidden="true" class="size-8 rounded-full border border-black/10 bg-gray-700"></span>
-                                    </label>
-                                    !-- Active and Checked: "ring ring-offset-1" --
-                                    <label aria-label="White" class="relative -m-0.5 flex cursor-pointer items-center justify-center rounded-full p-0.5 ring-gray-400 focus:outline-none">
-                                        <input type="radio" name="color-choice" value="White" class="sr-only">
-                                        <span aria-hidden="true" class="size-8 rounded-full border border-black/10 bg-white"></span>
-                                    </label>
-                                    !-- Active and Checked: "ring ring-offset-1" --
-                                    <label aria-label="Washed Gray" class="relative -m-0.5 flex cursor-pointer items-center justify-center rounded-full p-0.5 ring-gray-500 focus:outline-none">
-                                        <input type="radio" name="color-choice" value="Washed Gray" class="sr-only">
-                                        <span aria-hidden="true" class="size-8 rounded-full border border-black/10 bg-gray-500"></span>
-                                    </label>
-                                </div>
-                            </fieldset>
-                        </div>
-                        -->
                         <div class="mt-10 flex">
+                            <!-- Este formulario gestiona el producto que añadimos, mas adelante se puede expandir para permitir escoger mas cantidad. -->
                             <form action="{{ route('add') }}" method="POST">
                                 @csrf
-                                <input type="number" id="product" name="product" value="{{ $product->id }}">
-                                <input type="number" id="quantity" name="quantity" value="1">
+                                <input type="number" id="product" name="product" value="{{ $product->id }}" hidden>
+                                <input type="number" id="quantity" name="quantity" value="1" hidden>
                                 <button type="submit" class="flex max-w-xs flex-1 items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-50 sm:w-full">Añadir al carrito</button>
                             </form>
-
-                                
-
 
                             <button type="button" class="ml-4 flex items-center justify-center rounded-md px-3 py-3 text-gray-400 hover:bg-gray-100 hover:text-gray-500">
                                 <svg class="size-6 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">

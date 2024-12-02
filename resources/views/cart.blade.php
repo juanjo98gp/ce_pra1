@@ -35,17 +35,20 @@
 
                                         <div class="mt-4 flex items-center sm:absolute sm:left-1/2 sm:top-0 sm:mt-0 sm:block">
                                             <label for="quantity-0" class="sr-only">Quantity</label>
-                                            <select id="quantity-0" name="quantity-0" class="block max-w-full rounded-md border border-gray-300 py-1.5 text-left text-base/5 font-medium text-gray-700 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500 sm:text-sm">
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                                <option value="3">3</option>
-                                                <option value="4">4</option>
-                                                <option value="5">5</option>
-                                                <option value="6">6</option>
-                                                <option value="7">7</option>
-                                                <option value="8">8</option>
-                                                <option value="8">9</option>
-                                            </select>
+                                            <form action="{{ route('update') }}" method="POST">
+                                                @csrf
+                                                <input type="hidden" name="product" value="{{ $product_id }}">
+                                                <select id="quantity" name="quantity" onchange="this.form.submit()" class="block max-w-full rounded-md border border-gray-300 py-1.5 text-left text-base/5 font-medium text-gray-700 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500 sm:text-sm">
+                                                    @for($i = 0; $i < 10; ++$i)
+                                                        @if ($i == $item["quantity"])
+                                                            <option value="{{$i}}" selected>{{$i}}</option>
+                                                        @else
+                                                            <option value="{{$i}}">{{ $i }}</option>
+                                                        @endif
+                                                    @endfor
+                                                    
+                                                </select>
+                                            </form>
 
                                             <form action="{{ route('remove') }}" method="POST">
                                                 @csrf
@@ -86,7 +89,7 @@
                                     <dd class="font-medium text-gray-900">{{ $total }} €</dd>
                                 </div>
                                 <div class="flex items-center justify-between py-4">
-                                    <dt class="text-gray-600">Shipping</dt>
+                                    <dt class="text-gray-600">Envío</dt>
                                     <dd class="font-medium text-gray-900">4.99 €</dd>
                                 </div>
                                 <div class="flex items-center justify-between py-4">
@@ -101,13 +104,13 @@
                         </div>
                     </div>
                     <div class="mt-10">
-                        <button type="submit" class="w-full rounded-md border border-transparent bg-indigo-600 px-4 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-50">Checkout</button>
+                        <a href="{{ url('/checkout_tunnel') }}" class="w-full rounded-md border border-transparent bg-indigo-600 px-4 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-50">Checkout</a>
                     </div>
 
                     <div class="mt-6 text-center text-sm text-gray-500">
                         <p>
                             or
-                            <a href="#" class="font-medium text-indigo-600 hover:text-indigo-500">
+                            <a href="{{ url('/') }}" class="font-medium text-indigo-600 hover:text-indigo-500">
                                 Continue Shopping
                                 <span aria-hidden="true"> &rarr;</span>
                             </a>

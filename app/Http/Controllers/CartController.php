@@ -64,6 +64,25 @@ class CartController extends Controller
         return redirect()->route('cart')->with('success', 'Producto eliminado del carrito.');
     }
 
+    //Incrementar cantidad producto
+    public function update_quantity(Request $request)
+    {
+        $product = $request->input('product');
+        $cart = $request->session()->get('cart', []);
+
+        Log::info("QUANTITY");
+        Log::info($request->input('quantity'));
+        if (isset($cart[$product])) {
+            // Actualizar la cantidad de la línia específica
+            $cart[$product]['quantity'] = $request->input('quantity');
+        }
+
+        // Actualizar el carrito
+        $request->session()->put('cart', $cart);
+
+        return redirect()->route('cart')->with('success', 'Carrito actualizado.');
+    }
+
     // Limpiar el carrito
     public function clear(Request $request)
     {
@@ -71,6 +90,5 @@ class CartController extends Controller
         // Limpiar el carrito
         $request->session()->forget('cart');
         return redirect()->route('cart')->with('success', 'Carrito vacío.');
-
     }
 }

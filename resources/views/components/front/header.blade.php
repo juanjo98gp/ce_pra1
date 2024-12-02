@@ -1,6 +1,7 @@
 <!-- Mobile menu Off-canvas menu for mobile, show/hide based on off-canvas menu state.-->
+<!--
 <div class="relative z-40 lg:hidden" role="dialog" aria-modal="true">
-    <!--
+    !--
                 Off-canvas menu backdrop, show/hide based on off-canvas menu state.
 
                 Entering: "transition-opacity ease-linear duration-300"
@@ -9,11 +10,11 @@
                 Leaving: "transition-opacity ease-linear duration-300"
                     From: "opacity-100"
                     To: "opacity-0"
-            -->
+            --
     <div class="fixed inset-0 bg-black bg-opacity-25" aria-hidden="true"></div>
 
     <div class="fixed inset-0 z-40 flex">
-        <!--
+        !--
                     Off-canvas menu, show/hide based on off-canvas menu state.
 
                     Entering: "transition ease-in-out duration-300 transform"
@@ -22,7 +23,7 @@
                     Leaving: "transition ease-in-out duration-300 transform"
                     From: "translate-x-0"
                     To: "-translate-x-full"
-                    -->
+                    --
         <div class="relative flex w-full max-w-xs flex-col overflow-y-auto bg-white pb-12 shadow-xl">
             <div class="flex px-4 pb-2 pt-5">
                 <button type="button" class="-m-2 inline-flex items-center justify-center rounded-md p-2 text-gray-400">
@@ -33,19 +34,19 @@
                 </button>
             </div>
 
-            <!-- Links -->
+            !-- Links --
             <div class="mt-2">
                 <div class="border-b border-gray-200">
                     <div class="-mb-px flex space-x-8 px-4" aria-orientation="horizontal" role="tablist">
-                        <!-- Selected: "border-indigo-600 text-indigo-600", Not Selected: "border-transparent text-gray-900" -->
+                        !-- Selected: "border-indigo-600 text-indigo-600", Not Selected: "border-transparent text-gray-900" --
                         <button id="tabs-1-tab-1" class="flex-1 whitespace-nowrap border-b-2 border-transparent px-1 py-4 text-base font-medium text-gray-900" aria-controls="tabs-1-panel-1" role="tab" type="button">Women</button>
-                        <!-- Selected: "border-indigo-600 text-indigo-600", Not Selected: "border-transparent text-gray-900" -->
+                        !-- Selected: "border-indigo-600 text-indigo-600", Not Selected: "border-transparent text-gray-900" --
                         <button id="tabs-1-tab-2" class="flex-1 whitespace-nowrap border-b-2 border-transparent px-1 py-4 text-base font-medium text-gray-900" aria-controls="tabs-1-panel-2" role="tab" type="button">Men</button>
                     </div>
                 </div>
 
-                <!-- 'Women' tab panel, show/hide based on tab state. -->
-                <!-- 
+                !-- 'Women' tab panel, show/hide based on tab state. --
+                !-- 
                 <div id="tabs-1-panel-1" class="space-y-12 px-4 py-6" aria-labelledby="tabs-1-tab-1" role="tabpanel" tabindex="0">
                     <div class="grid grid-cols-2 gap-x-4 gap-y-10">
                         <div class="group relative">
@@ -90,9 +91,9 @@
                         </div>
                     </div>
                 </div>
-                -->
-                <!-- 'Men' tab panel, show/hide based on tab state. -->
-                <!-- 
+                --
+                !-- 'Men' tab panel, show/hide based on tab state. --
+                !-- 
                 <div id="tabs-1-panel-2" class="space-y-12 px-4 py-6" aria-labelledby="tabs-1-tab-2" role="tabpanel" tabindex="0">
                     <div class="grid grid-cols-2 gap-x-4 gap-y-10">
                         <div class="group relative">
@@ -137,7 +138,7 @@
                         </div>
                     </div>
                 </div>
-                -->
+                --
             </div>
 
             <div class="space-y-6 border-t border-gray-200 px-4 py-6">
@@ -169,8 +170,8 @@
             @endif
 
             <div class="space-y-6 border-t border-gray-200 px-4 py-6">
-                <!-- Currency selector -->
-                <!-- 
+                !-- Currency selector --
+                !-- 
                 <form>
                     <div class="inline-block">
                         <label for="mobile-currency" class="sr-only">Currency</label>
@@ -190,11 +191,12 @@
                         </div>
                     </div>
                 </form>
-                -->
+                --
             </div>
         </div>
     </div>
 </div>
+-->
 
 <!-- Hero section -->
 <div class="relative bg-gray-900">
@@ -263,155 +265,13 @@
                                 <!-- Flyout menus -->
                                 <div class="inset-x-0 bottom-0 px-4">
                                     <div class="flex h-full justify-center space-x-8">
-                                        <div class="flex">
-                                            <div class="relative flex">
-                                                <button type="button" class="relative z-10 flex items-center justify-center text-sm font-medium text-white transition-colors duration-200 ease-out" aria-expanded="false">
-                                                    Women
-                                                    <!-- Open: "bg-white", Closed: "" -->
-                                                    <span class="absolute inset-x-0 -bottom-px h-0.5 transition duration-200 ease-out" aria-hidden="true"></span>
-                                                </button>
-                                            </div>
-
-                                            <!--
-                                            'Women' flyout menu, show/hide based on flyout menu state.
-
-                                            Entering: "transition ease-out duration-200"
-                                                From: "opacity-0"
-                                                To: "opacity-100"
-                                            Leaving: "transition ease-in duration-150"
-                                                From: "opacity-100"
-                                                To: "opacity-0"
-                                            -->
-                                            <!-- 
-                                            <div class="absolute inset-x-0 top-full text-sm text-gray-500">
-                                                <-- Presentational element used to render the bottom shadow, if we put the shadow on the actual panel it pokes out the top, so we use this shorter element to hide the top of the shadow --
-                                                <div class="absolute inset-0 top-1/2 bg-white shadow" aria-hidden="true"></div>
-
-                                                <div class="relative bg-white">
-                                                    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                                                        <div class="grid grid-cols-4 gap-x-8 gap-y-10 py-16">
-                                                            <div class="group relative">
-                                                                <div class="aspect-h-1 aspect-w-1 overflow-hidden rounded-md bg-gray-100 group-hover:opacity-75">
-                                                                    <img src="https://tailwindui.com/plus/img/ecommerce-images/mega-menu-category-01.jpg" alt="Models sitting back to back, wearing Basic Tee in black and bone." class="object-cover object-center">
-                                                                </div>
-                                                                <a href="#" class="mt-4 block font-medium text-gray-900">
-                                                                    <span class="absolute inset-0 z-10" aria-hidden="true"></span>
-                                                                    New Arrivals
-                                                                </a>
-                                                                <p aria-hidden="true" class="mt-1">Shop now</p>
-                                                            </div>
-                                                            <div class="group relative">
-                                                                <div class="aspect-h-1 aspect-w-1 overflow-hidden rounded-md bg-gray-100 group-hover:opacity-75">
-                                                                    <img src="https://tailwindui.com/plus/img/ecommerce-images/mega-menu-category-02.jpg" alt="Close up of Basic Tee fall bundle with off-white, ochre, olive, and black tees." class="object-cover object-center">
-                                                                </div>
-                                                                <a href="#" class="mt-4 block font-medium text-gray-900">
-                                                                    <span class="absolute inset-0 z-10" aria-hidden="true"></span>
-                                                                    Basic Tees
-                                                                </a>
-                                                                <p aria-hidden="true" class="mt-1">Shop now</p>
-                                                            </div>
-                                                            <div class="group relative">
-                                                                <div class="aspect-h-1 aspect-w-1 overflow-hidden rounded-md bg-gray-100 group-hover:opacity-75">
-                                                                    <img src="https://tailwindui.com/plus/img/ecommerce-images/mega-menu-category-03.jpg" alt="Model wearing minimalist watch with black wristband and white watch face." class="object-cover object-center">
-                                                                </div>
-                                                                <a href="#" class="mt-4 block font-medium text-gray-900">
-                                                                    <span class="absolute inset-0 z-10" aria-hidden="true"></span>
-                                                                    Accessories
-                                                                </a>
-                                                                <p aria-hidden="true" class="mt-1">Shop now</p>
-                                                            </div>
-                                                            <div class="group relative">
-                                                                <div class="aspect-h-1 aspect-w-1 overflow-hidden rounded-md bg-gray-100 group-hover:opacity-75">
-                                                                    <img src="https://tailwindui.com/plus/img/ecommerce-images/mega-menu-category-04.jpg" alt="Model opening tan leather long wallet with credit card pockets and cash pouch." class="object-cover object-center">
-                                                                </div>
-                                                                <a href="#" class="mt-4 block font-medium text-gray-900">
-                                                                    <span class="absolute inset-0 z-10" aria-hidden="true"></span>
-                                                                    Carry
-                                                                </a>
-                                                                <p aria-hidden="true" class="mt-1">Shop now</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
+                                        @foreach ($categories as $category)
+                                            <div class="flex">
+                                                <div class="relative flex">
+                                                    <a href="{{ url('/category/' . $category->id) }}" class="relative z-10 flex items-center justify-center text-sm font-medium text-white transition-colors duration-200 ease-out" aria-expanded="false">{{ $category->name }}</a>
                                                 </div>
                                             </div>
-                                            -->
-                                        </div>1
-                                        <div class="flex">
-                                            <div class="relative flex">
-                                                <button type="button" class="relative z-10 flex items-center justify-center text-sm font-medium text-white transition-colors duration-200 ease-out" aria-expanded="false">
-                                                    Men
-                                                    <!-- Open: "bg-white", Closed: "" -->
-                                                    <span class="absolute inset-x-0 -bottom-px h-0.5 transition duration-200 ease-out" aria-hidden="true"></span>
-                                                </button>
-                                            </div>
-
-                                            <!--
-                                            'Women' flyout menu, show/hide based on flyout menu state.
-
-                                            Entering: "transition ease-out duration-200"
-                                                From: "opacity-0"
-                                                To: "opacity-100"
-                                            Leaving: "transition ease-in duration-150"
-                                                From: "opacity-100"
-                                                To: "opacity-0"
-                                            -->
-                                            <!-- 
-                                            <div class="absolute inset-x-0 top-full text-sm text-gray-500">
-                                                !-- Presentational element used to render the bottom shadow, if we put the shadow on the actual panel it pokes out the top, so we use this shorter element to hide the top of the shadow --
-                                                <div class="absolute inset-0 top-1/2 bg-white shadow" aria-hidden="true"></div>
-
-                                                <div class="relative bg-white">
-                                                    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                                                        <div class="grid grid-cols-4 gap-x-8 gap-y-10 py-16">
-                                                            <div class="group relative">
-                                                                <div class="aspect-h-1 aspect-w-1 overflow-hidden rounded-md bg-gray-100 group-hover:opacity-75">
-                                                                    <img src="https://tailwindui.com/plus/img/ecommerce-images/mega-menu-01-men-category-01.jpg" alt="Hats and sweaters on wood shelves next to various colors of t-shirts on hangers." class="object-cover object-center">
-                                                                </div>
-                                                                <a href="#" class="mt-4 block font-medium text-gray-900">
-                                                                    <span class="absolute inset-0 z-10" aria-hidden="true"></span>
-                                                                    New Arrivals
-                                                                </a>
-                                                                <p aria-hidden="true" class="mt-1">Shop now</p>
-                                                            </div>
-                                                            <div class="group relative">
-                                                                <div class="aspect-h-1 aspect-w-1 overflow-hidden rounded-md bg-gray-100 group-hover:opacity-75">
-                                                                    <img src="https://tailwindui.com/plus/img/ecommerce-images/mega-menu-01-men-category-02.jpg" alt="Model wearing light heather gray t-shirt." class="object-cover object-center">
-                                                                </div>
-                                                                <a href="#" class="mt-4 block font-medium text-gray-900">
-                                                                    <span class="absolute inset-0 z-10" aria-hidden="true"></span>
-                                                                    Basic Tees
-                                                                </a>
-                                                                <p aria-hidden="true" class="mt-1">Shop now</p>
-                                                            </div>
-                                                            <div class="group relative">
-                                                                <div class="aspect-h-1 aspect-w-1 overflow-hidden rounded-md bg-gray-100 group-hover:opacity-75">
-                                                                    <img src="https://tailwindui.com/plus/img/ecommerce-images/mega-menu-01-men-category-03.jpg" alt="Grey 6-panel baseball hat with black brim, black mountain graphic on front, and light heather gray body." class="object-cover object-center">
-                                                                </div>
-                                                                <a href="#" class="mt-4 block font-medium text-gray-900">
-                                                                    <span class="absolute inset-0 z-10" aria-hidden="true"></span>
-                                                                    Accessories
-                                                                </a>
-                                                                <p aria-hidden="true" class="mt-1">Shop now</p>
-                                                            </div>
-                                                            <div class="group relative">
-                                                                <div class="aspect-h-1 aspect-w-1 overflow-hidden rounded-md bg-gray-100 group-hover:opacity-75">
-                                                                    <img src="https://tailwindui.com/plus/img/ecommerce-images/mega-menu-01-men-category-04.jpg" alt="Model putting folded cash into slim card holder olive leather wallet with hand stitching." class="object-cover object-center">
-                                                                </div>
-                                                                <a href="#" class="mt-4 block font-medium text-gray-900">
-                                                                    <span class="absolute inset-0 z-10" aria-hidden="true"></span>
-                                                                    Carry
-                                                                </a>
-                                                                <p aria-hidden="true" class="mt-1">Shop now</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                                -->
-                                        </div>
-
-                                        <a href="#" class="flex items-center text-sm font-medium text-white">Company</a>
-                                        <a href="#" class="flex items-center text-sm font-medium text-white">Stores</a>
+                                        @endforeach
                                     </div>
                                 </div>
                             </div>
@@ -462,7 +322,7 @@
                                             <svg class="h-6 w-6 shrink-0 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
                                                 <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
                                             </svg>
-                                            <span class="ml-2 text-sm font-medium text-white">0</span>
+                                            <span class="ml-2 text-sm font-medium text-white">{{ $cart_count }}</span>
                                             <span class="sr-only">items in cart, view bag</span>
                                         </a>
                                     </div>

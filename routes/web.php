@@ -30,8 +30,13 @@ Route::get('/cart', [CartController::class, 'show'])->name('cart');
 Route::post('/cart/add', [CartController::class, 'add'])->name('add');
 Route::post('/cart/remove', [CartController::class, 'remove'])->name('remove');
 Route::post('/cart/clear', [CartController::class, 'clear'])->name('clear');
+Route::post('/cart/update', [CartController::class, 'update_quantity'])->name('update');
 # Checkout (cómo no hay túnel de pago llamaremos a esta parte "CheckoutTunnel")
 Route::get('/checkout_tunnel', [CheckoutController::class, 'show'])->name('checkout-tunnel');
+Route::post('/checkout_tunnel/login', [CheckoutController::class, 'login'])->name('checkout-login');
+Route::post('/checkout_tunnel/guest', [CheckoutController::class, 'guest'])->name('checkout-guest');
+Route::post('/checkout_tunnel/sale', [CheckoutController::class, 'create_sale'])->name('checkout-sale');
+Route::get('/checkout', [CheckoutController::class, 'show_checkout'])->name('checkout');
 #Route::get('/c')
 
 Route::get('/dashboard', function () {

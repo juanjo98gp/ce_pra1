@@ -10,7 +10,8 @@
 
         <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-[480px]">
             <div class="bg-white px-6 py-12 shadow sm:rounded-lg sm:px-12">
-                <form class="space-y-6" action="#" method="POST">
+                <form class="space-y-6" action="{{ url('/checkout_tunnel/login') }}" method="POST">
+                    @csrf
                     <div>
                         <label for="email" class="block text-sm/6 font-medium text-gray-900">Correo electrónico</label>
                         <div class="mt-2">
@@ -58,11 +59,12 @@
                             <div class="w-full border-t border-gray-200"></div>
                         </div>
                         <div class="relative flex justify-center text-sm/6 font-medium">
-                            <span class="bg-white px-6 text-gray-900">O continue cómo</span>
+                            <span class="bg-white px-6 text-gray-900">O continue cómo invitado</span>
                         </div>
                     </div>
 
-                    <form class="space-y-6" action="#" method="POST">
+                    <form class="space-y-6" action="{{ url('/checkout_tunnel/guest') }}" method="POST">
+                        @csrf
                         <div>
                             <label for="email" class="block text-sm/6 font-medium text-gray-900">Correo electrónico</label>
                             <div class="mt-2">
