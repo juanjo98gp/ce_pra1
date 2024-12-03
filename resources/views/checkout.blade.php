@@ -87,7 +87,7 @@
             <div class="mt-16 border-t border-gray-200 py-6 text-right">
                 <form action="{{ url('/checkout_tunnel/sale') }}" method="POST">
                     @csrf
-                    <input type="hidden" id="email" name=" " type="email" autocomplete="email" required value="{{ $email }}">
+                    <input type="hidden" id="email" name="email" type="email" autocomplete="email" required value="{{ $email }}">
                     <input type="hidden" id="name" name="name" type="text" value="{{ $name }}">
                     <input type="hidden" id="address" name="address" type="text" required value="{{ $address }}">
                     <input type="hidden" id="user_type" name="user_type" type="text" required value="{{ $user_type }}">
